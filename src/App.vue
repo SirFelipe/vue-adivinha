@@ -8,7 +8,8 @@
     <Button texto="Checar número" classe="btn btn-outline-primary" alerta="Este é um alerta" fundo="" v-on:clicou="this.checarNumero"/>
     <br>
     <Button texto="Reiniciar" classe="btn btn-outline-danger" fundo="" v-on:clicou="this.reiniciar"/>
-    <div id="txtSaida" style="color: green"></div>
+    <br>
+    <Saida :sorteado="numero" :adivinhado="valor" style="color: green"/>
   </div>
 </template>
 
@@ -16,12 +17,14 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import Entrada from './components/Entrada.vue'
 import Button from './components/Button.vue'
+import Saida from './components/Saida.vue'
 
 export default {
   name: 'app',
   components: {
     Entrada,
-    Button
+    Button,
+    Saida
   },
   data(){
     return { valor: "", numero: Math.floor(Math.random() * 101)}
@@ -33,13 +36,13 @@ export default {
     },
     checarNumero(){
       if(this.valor == this.numero){
-        alert("Acertou mizeravi!");
+        //alert("Acertou mizeravi!");
       }else if(this.valor < this.numero){
-        alert("Tente um número maior.");
+        //alert("Tente um número maior.");
       }else if(this.valor > this.numero){
-        alert("Tente um número menor");
+        //alert("Tente um número menor");
       }else{
-        alert("Entrada inválida");
+        //alert("Entrada inválida");
       }
     },
     reiniciar(){
