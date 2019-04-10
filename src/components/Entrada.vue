@@ -15,7 +15,10 @@ export default {
     },methods:{
         enter(){
             this.$emit("mudou", this.txtNum);
-        }
+        },
+        /*limpa(){
+            this.txtNum = ""
+        }*/
     }
 }
 </script>

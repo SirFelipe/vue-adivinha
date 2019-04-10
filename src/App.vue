@@ -47,6 +47,7 @@ export default {
     },
     reiniciar(){
       this.numero = Math.floor(Math.random() * 101);
+      this.$refs.entrada.limpa();
     }
   }
 }
